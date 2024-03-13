@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main{
+    margin: auto;
+    background-color: yellow;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form{
+    margin-bottom: 1rem;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.folha-pag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divFol{
+    margin-bottom: 12px;
+}
