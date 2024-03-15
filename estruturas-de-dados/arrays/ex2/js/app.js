@@ -23,30 +23,36 @@ btnAposta.addEventListener('click', () => {
     chances.innerHTML = chance
     let numer = numero.value
     Number(numer)
-    if(chance !== 0){
-        if(numer != numeroDoDia){
-            chance--
-            erro++
-            tentativas.push(numer)
-            erros.innerHTML = erro
-            tentar.innerHTML = `[${tentativas}]`
-            chances.innerHTML = chance
-            if(numer < numeroDoDia){
-                dica.innerHTML = `É um número maior que ${numer}`
-            }else if(numer > numeroDoDia){
-                dica.innerHTML = `É um número menor que ${numer}`
+    if(numer <= 0 || isNaN(numer) || numer > 100){
+        alert('Digite um número entre 1 e 100!')
+        numero.focus()
+        return
+    }else{
+        if(chance !== 0){
+            if(numer != numeroDoDia){
+                chance--
+                erro++
+                tentativas.push(numer)
+                erros.innerHTML = erro
+                tentar.innerHTML = `[${tentativas}]`
+                chances.innerHTML = chance
+                if(numer < numeroDoDia){
+                    dica.innerHTML = `É um número maior que ${numer}`
+                }else if(numer > numeroDoDia){
+                    dica.innerHTML = `É um número menor que ${numer}`
+                }
+            }else if(numer == numeroDoDia){
+                ganhou = true
+                alert('Voce Ganhou')
+                dica.innerHTML = `Você ganhou o jogo! O número era: ${numeroDoDia}`
+                btnAposta.disabled = true
             }
-        }else if(numer == numeroDoDia){
-            ganhou = true
-            alert('Voce Ganhou')
-            dica.innerHTML = `Você ganhou o jogo! O número era: ${numeroDoDia}`
+            numero.value = ''
+        }else{
+            alert('Voce Perdeu')
+            dica.innerHTML = `Você perdeu o jogo! O número era: ${numeroDoDia}`
             btnAposta.disabled = true
         }
-        numero.value = ''
-    }else{
-        alert('Voce Perdeu')
-        dica.innerHTML = `Você perdeu o jogo! O número era: ${numeroDoDia}`
-        btnAposta.disabled = true
     }
 })
 
