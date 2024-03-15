@@ -1,0 +1,31 @@
+<!-- Regras:
+-   Caso o campo esteja vazio, de um erro
+-   Caso adicione como normal, fica padrão, organizado por numero
+-   Caso coloque como urgencia, ele vai para primeiro lugar da fila
+-   Quando apertar em atender, vai para a fila de Em Atendimento
+-   Caso não tenha ninguem para atender, de um aviso
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fila de Consultorio</title>
+</head>
+<body>
+    <h1>Consultorio Médico</h1>
+    <p>Pacientes:
+        <input type="text" name="Pacientes" id="inPacientes" autofocus>
+        <input type="button" value="Adicionar" id="btnAdicionar">
+        <input type="button" value="Urgencia" id="btnUrgencia">
+        <input type="button" value="Atender" id="btnAtender">
+    </p>
+    <h3>
+        Em Atendimento: <span id="outAtendimento"></span>
+    </h3>
+    <pre id='outLista'></pre>
+    <script src="./js/app.js"></script>
+</body>
+</html>
