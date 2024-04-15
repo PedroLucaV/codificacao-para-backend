@@ -59,23 +59,23 @@ const server = http.createServer((req, res) => {
         })
         req.on("end", () => {
             if (body.includes("nome") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir seu nome!`)
             } else if (body.includes("email") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir seu email!`)
             } else if (body.includes("senha") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua senha`)
             } else if (body.includes("cidade") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua cidade!`)
             } else if (body.includes("idade") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua idade`)
             } else if (body.includes("confirmarSenha") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua confirmação de senha`)
             } else {
                 const bodyValidate = JSON.parse(body)
                 if (bodyValidate.idade <= 16) {
-                    res.end('B')
+                    res.end('Você precisa ser maior de 16 anos para participar!')
                 } else if (bodyValidate.senha !== bodyValidate.confirmarSenha) {
-                    res.end('B')
+                    res.end('Sua senha não condiz')
                 } else {
                     const novoUser = JSON.parse(body)
                     novoUser.id = participantes.length + 1
@@ -141,23 +141,23 @@ const server = http.createServer((req, res) => {
         }) //Escuta
         req.on("end", () => {
             if (body.includes("nome") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir seu nome!`)
             } else if (body.includes("email") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir seu email!`)
             } else if (body.includes("senha") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua senha`)
             } else if (body.includes("cidade") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua cidade!`)
             } else if (body.includes("idade") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua idade`)
             } else if (body.includes("confirmarSenha") === false) {
-                res.end('A')
+                res.end(`Você precisa incluir sua confirmação de senha`)
             } else {
                 const bodyValidate = JSON.parse(body)
                 if (bodyValidate.idade <= 16) {
-                    res.end('B')
+                    res.end('Você precisa ser maior de 16 anos para participar!')
                 } else if (bodyValidate.senha !== bodyValidate.confirmarSenha) {
-                    res.end('B')
+                    res.end('Sua senha não condiz')
                 } else {
                     const updateParti = JSON.parse(body);
                     let index = participantes.findIndex((participantes) => participantes.id == userId) //retorna o index desejado
