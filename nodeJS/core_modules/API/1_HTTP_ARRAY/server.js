@@ -56,7 +56,7 @@ const server = http.createServer((req, res) => {
             const index = users.findIndex((user) => user.id == userId) //retorna o index desejado
             if (index !== -1) {
                 //atualiza
-                users[index] = { ...users[index], updateUser } //concatena
+                users[index] = { ...users[index],  } //concatena
                 res.setHeader("Content-Type", "application/json")
                 res.end(JSON.stringify(users[index]))
             } else {
